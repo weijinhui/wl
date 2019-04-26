@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Class-Path: log4j-to-slf4j-2.11.2.jar spring-aop-5.1.6.RELEASE.jar unb
+ escape-1.1.6.RELEASE.jar logback-classic-1.2.3.jar jackson-annotation
+ s-2.9.0.jar spring-expression-5.1.6.RELEASE.jar jackson-databind-2.9.
+ 8.jar jul-to-slf4j-1.7.26.jar hibernate-validator-6.0.16.Final.jar sp
+ ring-core-5.1.6.RELEASE.jar jboss-logging-3.3.2.Final.jar spring-web-
+ 5.1.6.RELEASE.jar spring-boot-devtools-2.1.4.RELEASE.jar jackson-modu
+ le-parameter-names-2.9.8.jar spring-boot-starter-web-2.1.4.RELEASE.ja
+ r thymeleaf-extras-java8time-3.0.4.RELEASE.jar jackson-core-2.9.8.jar
+  thymeleaf-spring5-3.0.11.RELEASE.jar thymeleaf-3.0.11.RELEASE.jar sp
+ ring-webmvc-5.1.6.RELEASE.jar javax.annotation-api-1.3.2.jar spring-b
+ oot-starter-logging-2.1.4.RELEASE.jar jackson-datatype-jsr310-2.9.8.j
+ ar spring-boot-starter-thymeleaf-2.1.4.RELEASE.jar slf4j-api-1.7.26.j
+ ar spring-jcl-5.1.6.RELEASE.jar attoparser-2.0.5.RELEASE.jar spring-b
+ oot-starter-2.1.4.RELEASE.jar spring-boot-starter-json-2.1.4.RELEASE.
+ jar logback-core-1.2.3.jar classmate-1.4.0.jar spring-beans-5.1.6.REL
+ EASE.jar spring-boot-autoconfigure-2.1.4.RELEASE.jar log4j-api-2.11.2
+ .jar jackson-datatype-jdk8-2.9.8.jar spring-context-5.1.6.RELEASE.jar
+  validation-api-2.0.1.Final.jar spring-boot-2.1.4.RELEASE.jar snakeya
+ ml-1.23.jar
+Main-Class: com.example.wl.WlApplication
+

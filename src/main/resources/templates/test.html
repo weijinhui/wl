@@ -6,16 +6,41 @@
     <script type="text/javascript" src="/jquery-2.0.0.min.js"></script>
     <script>
         $(document).ready(function(){
-            var url = $("#url").val();
+
+            $("#submit").click(function(){
+                var urlstr = $("#urlstr").val();
+                var number = $("#number").val();
+                $("#submit").text("正在执行访问。。。");
+                $("#submit").css("color","red")
+                $.ajax({
+                    type: "POST",//方法类型
+                    dataType: "json",//预期服务器返回的数据类型
+                    url: "/testLogin/",
+                    data: {
+                        "urlstr":urlstr,
+                        "number":number
+                    },
+                    success: function (result) {
+                        if (result.code == 200) {
+                            $("#submit").text("开始访问");
+                        } else {
+                            alert(result.message);
+                        };
+                    },
+                    error: function () {
+                        alert("异常");
+                    }
+                });
+            });
 
         });
     </script>
 </head>
 <body>
 <p>
-访问地址：<input type="text" id="url" style="width: 80%" value="http://139.196.81.229:8088/NewFinsoftCrm3WX/index?t=1556262341870">
+访问地址：<input type="text" id="urlstr" style="width: 80%" value="http://139.196.81.229:8088/NewFinsoftCrm3WX/index?t=1556262341870">
 <p>
 次数：<input type="text" id="number" style="width: 80%" value="10000">
-<p><button type="button">开始访问</button>
+<p><button type="button" id="submit">开始访问</button>
 </body>
 </html>
