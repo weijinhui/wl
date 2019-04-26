@@ -39,18 +39,28 @@ public class TestController {
         Map<String, String> map = new HashMap<>();
         try {
             for (int i = 0; i < number; i++) {
-
-                URL url = new URL(urlstr);
-                InputStream in = url.openStream();
-                InputStreamReader isr = new InputStreamReader(in);
-                BufferedReader bufr = new BufferedReader(isr);
-                String str;
-                while ((str = bufr.readLine()) != null) {
-                    System.out.println(str);
-                }
-                bufr.close();
-                isr.close();
-                in.close();
+                Thread t = new Thread(new Runnable() {
+                    public void run() {
+                        try {
+                            for (int j = 0; j < number; j++) {
+                                URL url = new URL(urlstr);
+                                InputStream in = url.openStream();
+                                InputStreamReader isr = new InputStreamReader(in);
+                                BufferedReader bufr = new BufferedReader(isr);
+                                String str;
+                                while ((str = bufr.readLine()) != null) {
+                                    System.out.println(str);
+                                }
+                                bufr.close();
+                                isr.close();
+                                in.close();
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+                t.start();
             }
             map.put("code", "200");
             map.put("message", "success");
@@ -61,4 +71,5 @@ public class TestController {
         }
         return map;
     }
+
 }
